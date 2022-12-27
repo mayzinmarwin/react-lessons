@@ -25,7 +25,7 @@ const TodoList = ({todos,setTodos,setEditTodo}) => {
     <div>
         {todos.map((todo) => (
             <li className='list-item' key={todo.id}>
-                <input type="text" value={todo.title} className="list"
+                <input type="text" value={todo.title} className={`list ${todo.completed ? "complete" : ""}`}
                 onChange={(event)=> event.preventDefault()} />
                 <div>
                     <button className="button-complete task-button" onClick={()=>handleComplete(todo)}>
